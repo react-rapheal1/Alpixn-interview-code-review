@@ -1,0 +1,1 @@
+# Alpinx Navbar and Footer design for interview purpose 
