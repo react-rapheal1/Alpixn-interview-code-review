@@ -2,7 +2,7 @@ import React from "react"
 import { resource } from "@/assets/images";
 import ResourceMenu from "./ResourceContent";
 
-export default function Resource() {
+export default function Resource({ mobile = false }: { mobile?: boolean }) {
   return (
     <ResourceMenu
     label="Resources"
@@ -25,6 +25,7 @@ export default function Resource() {
         from: "#00172F",
         to: "#00070E",
     }}
+     mobile={mobile}
     />
   );
 }

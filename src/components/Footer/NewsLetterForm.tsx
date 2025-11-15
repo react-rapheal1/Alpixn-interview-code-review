@@ -12,7 +12,7 @@ export const NewsletterForm = () => {
       <h3 className="text-2xl font-semibold text-white mb-6">
         Subscribe To Our Newsletter
       </h3>
-      <div className="flex max-w-md mx-auto gap-0 sm:gap-0 max-[381px]:flex-col">
+      <div className="flex max-w-md mx-auto gap-0 sm:gap-0 max-[400px]:flex-col">
         <input
           type="email"
           value={email}

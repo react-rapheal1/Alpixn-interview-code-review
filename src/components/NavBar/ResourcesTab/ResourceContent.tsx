@@ -2,12 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
 import Image from "next/image";
-
-interface DropdownSection {
-  title: string;
-  sections: string[];
-}
-
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 interface ResourceMenuProps {
   label: string;
   title: string;
@@ -22,6 +17,7 @@ interface ResourceMenuProps {
     from: string;
     to: string;
   };
+  mobile?: boolean;
 }
 
 export default function ResourceMenu({
@@ -38,6 +34,7 @@ export default function ResourceMenu({
     from: "#00172F",
     to: "#00070E",
   },
+  mobile = false,
 }: ResourceMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -46,6 +43,33 @@ export default function ResourceMenu({
       onButtonClick();
     }
   };
+
+  if (mobile) {
+    return (
+      <Accordion type="single" collapsible className="w-full">
+        <AccordionItem value="products" className="border-b border-gray-700">
+          <AccordionTrigger className="text-white font-medium text-base py-3 hover:no-underline">
+            {label}
+          </AccordionTrigger>
+          <AccordionContent>
+            <div className="pl-4 pb-3 space-y-2">
+              {sections.map((section, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center space-x-2 cursor-pointer py-2"
+                >
+                  <span className="text-gray-400 text-xs">—</span>
+                  <span className="text-gray-300 text-sm hover:text-white transition-colors">
+                    {section}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
+  }
 
   return (
     <div
@@ -80,7 +104,7 @@ export default function ResourceMenu({
           onMouseLeave={() => setIsOpen(false)}
           className={`fixed left-0 right-0 ${topOffset} shadow-2xl z-50`}
         >
-          <div className="mx-auto h-[481px] w-[1400px]">
+          <div className="mx-auto w-[1400px]">
             <div
               className="p-8 shadow-2xl border border-purple-700"
               style={{
@@ -103,7 +127,7 @@ export default function ResourceMenu({
                     <ArrowRight />
                   </Button>
                 </div>
-                <div className="h-[400px] absolute left-1/2 top-0 bottom-0 w-px bg-gray-700 transform -translate-x-1/2"></div>
+                <div className="h-[385px] absolute left-1/2 top-0 bottom-0 w-px bg-gray-700 transform -translate-x-1/2"></div>
                 <div className="flex">
                   <div>
                     {sections.map((section, idx) => (

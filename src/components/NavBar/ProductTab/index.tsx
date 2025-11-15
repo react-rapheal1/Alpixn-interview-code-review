@@ -3,7 +3,7 @@ import ProductContent from "./ProductContent"
 import { product } from "@/assets/images"
 
 
-export default function Product() {
+export default function Product({ mobile = false }: { mobile?: boolean }){
   return (
     <ProductContent
   label="Products"
@@ -30,6 +30,7 @@ export default function Product() {
     from: "#00172F",
     to: "#00070E",
   }}
+  mobile={mobile}
 />
 
   );

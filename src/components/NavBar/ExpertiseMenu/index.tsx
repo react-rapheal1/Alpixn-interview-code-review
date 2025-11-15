@@ -3,11 +3,51 @@ import { Button } from "@/components/ui/button";
 import ExpertiseTabs from "./ExpertiseTab";
 import { TabKey } from "./navContent";
 import { ChevronDown } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { navContent } from "./navContent";
 
-export default function ExpertiseMenus() {
+interface ExpertiseMenuProps {
+  mobile?: boolean;
+}
+export default function ExpertiseMenus({ mobile = false }: ExpertiseMenuProps){
   const [tabState, setTabState] = useState<TabKey>("Software");
   const [isOpen, setIsOpen] = useState(false);
 
+  if (mobile) {
+        return (
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="offshore" className="border-b border-gray-700">
+              <AccordionTrigger className="text-white font-medium text-base py-3 hover:no-underline">
+                Our Expertise
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="space-y-4">
+                  {(Object.keys(navContent) as TabKey[]).map((key) => (
+                    <div key={key} className="space-y-2">
+                      <h4 className="text-white font-medium text-sm pl-4">
+                        {navContent[key].title}
+                      </h4>
+                      <div className="pl-6 space-y-2">
+                        {navContent[key].sections.map((section, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-center space-x-2 cursor-pointer py-1"
+                          >
+                            <span className="text-gray-400 text-xs">—</span>
+                            <span className="text-gray-300 text-sm hover:text-white transition-colors">
+                              {section}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        );
+      }
   return (
     <div
       className="relative inline-block"

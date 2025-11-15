@@ -12,4 +12,4 @@ export { default as milan } from "./milan.svg";
 export { default as newyork } from "./new-york.svg";
 export { default as southafrica } from "./south-africa.svg";
 export { default as thailand } from "./thailand.svg";
-
+export { default as hambuger } from "./hambuger.svg";

@@ -2,12 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
 import Image from "next/image";
-
-interface DropdownSection {
-  title: string;
-  sections: string[];
-}
-
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 interface ProductMenuProps {
   label: string;
   title: string;
@@ -22,6 +17,7 @@ interface ProductMenuProps {
     from: string;
     to: string;
   };
+  mobile?: boolean;
 }
 
 export default function ProductContent({
@@ -38,6 +34,7 @@ export default function ProductContent({
     from: "#00172F",
     to: "#00070E",
   },
+  mobile = false,
 }: ProductMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -46,6 +43,33 @@ export default function ProductContent({
       onButtonClick();
     }
   };
+
+  if (mobile) {
+    return (
+      <Accordion type="single" collapsible className="w-full">
+        <AccordionItem value="products" className="border-b border-gray-700">
+          <AccordionTrigger className="text-white font-medium text-base py-3 hover:no-underline">
+            {label}
+          </AccordionTrigger>
+          <AccordionContent>
+            <div className="pl-4 pb-3 space-y-2">
+              {sections.map((section, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center space-x-2 cursor-pointer py-2"
+                >
+                  <span className="text-gray-400 text-xs">—</span>
+                  <span className="text-gray-300 text-sm hover:text-white transition-colors">
+                    {section}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
+  }
 
   return (
     <div

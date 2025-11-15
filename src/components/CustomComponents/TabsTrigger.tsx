@@ -1,4 +1,3 @@
-// TabTriggers.tsx
 import { TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { navContent, TabKey } from "../NavBar/Technologies/navContent";
 
