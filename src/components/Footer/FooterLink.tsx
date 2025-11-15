@@ -1,5 +1,4 @@
 import React, {FC, ReactNode} from 'react';
-import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
 
 interface FooterLinkProps {
@@ -46,14 +45,20 @@ export const FooterColumn: FC<FooterColumnProps> = ({ title, links }) => {
 interface LocationBadgeProps {
   country: string;
   city: string;
-  flag: string;
+  flag: StaticImageData | string;
 }
 
 export const LocationBadge: FC<LocationBadgeProps> = ({ country, city, flag }) => {
   return (
     <div className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors cursor-pointer">
       <div className="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center text-xs">
-        {flag}
+        <Image
+        src={flag}
+        alt={country}
+        width={18}
+        height={18}
+        className="object-contain"
+      />
       </div>
       <span className="text-white text-sm whitespace-nowrap">
         {city}, {country}
@@ -64,7 +69,7 @@ export const LocationBadge: FC<LocationBadgeProps> = ({ country, city, flag }) =
 
 interface SocialIconProps {
   href: string;
-  icon: StaticImageData | string; // image
+  icon: StaticImageData | string;
   label: string;
 }
 

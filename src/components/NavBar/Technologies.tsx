@@ -102,7 +102,7 @@ export default function Technologies() {
           onMouseLeave={() => setIsOpen(false)}
           className="fixed left-0 right-0 top-[72px] shadow-2xl z-50"
         >
-          <div className="mx-auto h-[481px] w-full">
+          <div className="mx-auto h-[481px] w-[1400px]">
             <div className="p-8 shadow-2xl border border-purple-700"
             style={{ background: 'linear-gradient(to bottom right, #00172F, #00070E)' }}
             >

@@ -3,3 +3,13 @@ export { default as instagram } from "./instagram.svg";
 export { default as linkedin } from "./linkedin.svg";
 export { default as twitter } from "./twitter.svg";
 export { default as youtube } from "./youtube.svg";
+export { default as india } from "./india.svg";
+export { default as dubai } from "./dubai.svg";
+export { default as canada } from "./canada.svg";
+export { default as australia } from "./australia.svg";
+export { default as london } from "./london.svg";
+export { default as milan } from "./milan.svg";
+export { default as newyork } from "./new-york.svg";
+export { default as southafrica } from "./south-africa.svg";
+export { default as thailand } from "./thailand.svg";
+

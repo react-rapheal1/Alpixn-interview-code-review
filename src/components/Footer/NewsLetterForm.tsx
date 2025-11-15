@@ -12,7 +12,7 @@ export const NewsletterForm = () => {
       <h3 className="text-2xl font-semibold text-white mb-6">
         Subscribe To Our Newsletter
       </h3>
-      <div className="flex max-w-md mx-auto gap-0">
+      <div className="flex max-w-md mx-auto gap-0 sm:gap-0 max-[381px]:flex-col">
         <input
           type="email"
           value={email}
@@ -22,7 +22,7 @@ export const NewsletterForm = () => {
         />
         <button
           onClick={handleSubmit}
-          className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors"
+          className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors w-full sm:w-auto"
         >
           Subscribe
         </button>

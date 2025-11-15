@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {FC} from 'react';
 import { FooterColumn, LocationBadge, SocialIcon } from './FooterLink';
 import { facebook, instagram, youtube, linkedin, twitter } from '@/assets/icons';
 import { NewsletterForm } from './NewsLetterForm';
+import { thailand, london, milan, australia, canada, newyork, southafrica, dubai, india } from '@/assets/icons';
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   const companyLinks = [
     { label: 'Home', href: '#' },
     { label: 'About', href: '#' },
@@ -61,15 +62,15 @@ const Footer: React.FC = () => {
   ];
 
   const locations = [
-    { country: 'India', city: 'India', flag: '🇮🇳' },
-    { country: 'USA', city: 'New York', flag: '🇺🇸' },
-    { country: 'Australia', city: 'Sydney', flag: '🇦🇺' },
-    { country: 'UAE', city: 'Dubai', flag: '🇦🇪' },
-    { country: 'UK', city: 'London', flag: '🇬🇧' },
-    { country: 'Italy', city: 'Milan', flag: '🇮🇹' },
-    { country: 'Thailand', city: 'Thailand', flag: '🇹🇭' },
-    { country: 'South Africa', city: 'South Africa', flag: '🇿🇦' },
-    { country: 'Canada', city: 'Canada', flag: '🇨🇦' },
+    { country: 'India', city: 'New Delhi', flag: india },
+    { country: 'USA', city: 'New York', flag: newyork },
+    { country: 'Australia', city: 'Sydney', flag: australia },
+    { country: 'UAE', city: 'Dubai', flag: dubai },
+    { country: 'UK', city: 'London', flag: london },
+    { country: 'Italy', city: 'Milan', flag: milan },
+    { country: 'Thailand', city: 'Bangkok', flag: thailand },
+    { country: 'South Africa', city: 'Cape Town', flag: southafrica },
+    { country: 'Canada', city: 'Ottawa', flag: canada },
   ];
 
   const socialLinks = [
