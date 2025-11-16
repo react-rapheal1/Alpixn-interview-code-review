@@ -54,7 +54,6 @@ export default function Technology({ mobile = false }: TechnologyProps){
     <div
       className="relative inline-block"
       onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
     >
       <Button
         variant="ghost"
@@ -69,7 +68,11 @@ export default function Technology({ mobile = false }: TechnologyProps){
       </Button>
 
       {isOpen && (
-        <div className="fixed left-0 right-0 top-[72px] shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+        <div
+         onMouseEnter={() => setIsOpen(true)}
+         onMouseLeave={() => setIsOpen(false)} 
+        className="fixed left-0 right-0 top-[72px] shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+        >
           <div className="mx-auto max-w-[1400px] w-full px-4">
             <div
               className="rounded-lg shadow-2xl border border-purple-700/50 backdrop-blur-sm"

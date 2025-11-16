@@ -75,7 +75,6 @@ export default function ResourceMenu({
     <div
       className="relative inline-block"
       onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
     >
       <Button
         variant="outline"
@@ -101,6 +100,7 @@ export default function ResourceMenu({
 
       {isOpen && (
         <div
+          onMouseEnter={() => setIsOpen(true)}
           onMouseLeave={() => setIsOpen(false)}
           className={`fixed left-0 right-0 ${topOffset} shadow-2xl z-50`}
         >
